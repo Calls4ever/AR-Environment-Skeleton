@@ -7,10 +7,10 @@ class JointAccount < ActiveRecord::Base
     has_many :transfers, through: :payments
     has_many :pays, through: :payments
 
-    def self.payments_history
+    def self.merchant_bankers
         ac=[]
         JointAccount.all.each do |jt|
-            ac<<jt.payments
+            ac<<jt.merchant
             
         end
         ac
